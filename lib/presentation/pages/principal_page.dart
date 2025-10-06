@@ -1,11 +1,11 @@
 // Importación de Material Design para Flutter
 import 'package:flutter/material.dart';
 
-// PeoplePage: Página que muestra contenido relacionado con "People"
+// PrincipalPage: Página que muestra contenido relacionado con "People"
 // StatelessWidget porque no necesita manejar estado interno
-class PeoplePage extends StatelessWidget {
+class PrincipalPage extends StatelessWidget {
   // Constructor con super.key (sintaxis moderna Flutter 2025)
-  const PeoplePage({super.key});
+  const PrincipalPage({super.key});
 
   @override
   Widget build(BuildContext context) {

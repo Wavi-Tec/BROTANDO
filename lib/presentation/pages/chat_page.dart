@@ -1,6 +1,6 @@
 // Importaciones necesarias
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/chat/chat_screen.dart';
+import 'package:go_router/go_router.dart';
 
 // ChatPage: Página que permite navegar al chat de Yes/No original
 // Esta página actúa como puente entre la navegación curva y tu aplicación original
@@ -40,15 +40,8 @@ class ChatPage extends StatelessWidget {
           // ElevatedButton: Botón elevado que navega al chat original
           ElevatedButton(
             onPressed: () {
-              // Navigator.push: Navega a una nueva pantalla manteniendo la anterior en el stack
-              Navigator.push(
-                context, // BuildContext actual
-                MaterialPageRoute(
-                  // Tipo de ruta con animación material
-                  builder: (context) =>
-                      const ChatScreen(), // Construye la pantalla de chat
-                ),
-              );
+              // Usar GoRouter para navegar al chat screen
+              context.go('/chat-screen');
             },
             // Estilizado del botón
             style: ElevatedButton.styleFrom(
