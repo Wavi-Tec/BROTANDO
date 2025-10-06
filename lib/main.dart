@@ -12,11 +12,11 @@ class BrotandoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: appRouter,
       title: 'Brotando',
       theme: AppTheme.lightTheme.copyWith(
         textTheme: GoogleFonts.nunitoTextTheme(),
       ),
+      routerConfig: appRouter, // Usando GoRouter configurado
     );
   }
 }
