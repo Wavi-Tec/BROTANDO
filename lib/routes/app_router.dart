@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import '../presentation/pages/home_page.dart';
-import '../presentation/pages/principal_page.dart';
+import '../presentation/pages/principal/principal_page.dart';
 import '../presentation/pages/profile_page.dart';
 import '../presentation/pages/add_page.dart';
 import '../presentation/pages/search_page.dart';

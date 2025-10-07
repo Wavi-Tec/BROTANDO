@@ -12,7 +12,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Scaffold: Estructura básica de una pantalla en Material Design
     return Scaffold(
-      backgroundColor: Colors.blue, // Color de fondo de toda la pantalla
+      backgroundColor: const Color.fromARGB(
+        //aAQUI SE CAMBIA EL FONDO DEL NAV
+        255,
+        245,
+        245,
+        245,
+      ), // Color de fondo de toda la pantalla
       // AppBar: Barra superior de la aplicación
       appBar: AppBar(
         title: const Text('Curved Navigation Bar'),
@@ -25,7 +31,7 @@ class HomeScreen extends StatelessWidget {
 
       // Cuerpo principal de la pantalla
       body: Container(
-        color: Colors.blue, // Color de fondo
+        color: Colors.white10, // Color de fondo
         width: double.infinity, // Ancho completo de la pantalla
         height: double.infinity, // Alto completo de la pantalla
         alignment: Alignment.center, // Centra el contenido
