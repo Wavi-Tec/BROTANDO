@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
-import 'forest_page.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -30,16 +30,9 @@ class _SplashPageState extends State<SplashPage>
     );
 
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const ForestPage(),
-          transitionsBuilder: (_, anim, __, child) {
-            return FadeTransition(opacity: anim, child: child);
-          },
-          transitionDuration: const Duration(milliseconds: 800),
-        ),
-      );
+      if (context.mounted) {
+        context.go('/forest');
+      }
     });
   }
 

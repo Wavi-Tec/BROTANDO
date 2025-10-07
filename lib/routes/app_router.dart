@@ -1,14 +1,76 @@
 import 'package:go_router/go_router.dart';
 import '../presentation/pages/home_page.dart';
-import '../presentation/pages/forest_page.dart';
-import '../presentation/pages/challenges_page.dart';
-import '../presentation/pages/settings_page.dart';
+import '../presentation/pages/principal_page.dart';
+import '../presentation/pages/profile_page.dart';
+import '../presentation/pages/add_page.dart';
+import '../presentation/pages/search_page.dart';
+import '../presentation/pages/chat_page.dart';
+import '../presentation/pages/screens/home_screen.dart';
+import '../presentation/chat/chat_screen.dart';
+import 'page_transitions.dart';
 
 final appRouter = GoRouter(
+  initialLocation: '/inicio',
   routes: [
-    GoRoute(path: '/', builder: (_, __) => const HomePage()),
-    GoRoute(path: '/forest', builder: (_, __) => const ForestPage()),
-    GoRoute(path: '/challenges', builder: (_, __) => const ChallengesPage()),
-    GoRoute(path: '/settings', builder: (_, __) => const SettingsPage()),
+    ShellRoute(
+      builder: (context, state, child) {
+        return HomeScreen(child: child);
+      },
+      routes: [
+        GoRoute(
+          path: '/inicio',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const PrincipalPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/cupon',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const ProfilePage(),
+          ),
+        ),
+        GoRoute(
+          path: '/bosque',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const AddPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/cuestionario',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const SearchPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/donacion',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const ChatPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/chat-screen',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const ChatScreen(),
+          ),
+        ),
+      ],
+    ),
+    GoRoute(
+      path: '/',
+      pageBuilder: (context, state) =>
+          PageTransitions.buildFadeTransition(context, state, const HomePage()),
+    ),
   ],
 );
