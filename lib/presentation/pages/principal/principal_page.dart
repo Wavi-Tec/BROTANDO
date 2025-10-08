@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'widgets/user_header.dart';
 import 'widgets/puntos_card.dart';
 import 'widgets/premium_button.dart';
@@ -19,9 +20,12 @@ class PrincipalPage extends StatelessWidget {
               UserHeader(
                 userName: 'Maria Torrez',
                 userImage:
-                    'https://static.vecteezy.com/system/resources/previews/014/194/215/non_2x/avatar-icon-human-a-person-s-badge-social-media-profile-symbol-the-symbol-of-a-person-vector.jpg',
+                    'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/350218472/original/1cae06a7845aee5beafbf7fe6a623dc5caafbed9/draw-cute-minimalist-cartoon-avatar-or-icon-for-you.jpg',
                 onNotificationPressed: () {
                   // Manejar notificaciones
+                },
+                onUserImagePressed: () {
+                  context.go('/perfil');
                 },
               ),
               const SizedBox(height: 20),
