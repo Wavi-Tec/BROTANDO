@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import '../presentation/pages/home_page.dart';
 import '../presentation/pages/principal/principal_page.dart';
+import '../presentation/pages/perfil/perfil_page.dart';
 import '../presentation/pages/profile_page.dart';
 import '../presentation/pages/add_page.dart';
 import '../presentation/pages/search_page.dart';
@@ -63,6 +64,14 @@ final appRouter = GoRouter(
             context,
             state,
             const ChatScreen(),
+          ),
+        ),
+        GoRoute(
+          path: '/perfil',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const PerfilPage(),
           ),
         ),
       ],
