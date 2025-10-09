@@ -4,9 +4,10 @@ import '../presentation/pages/principal/principal_page.dart';
 import '../presentation/pages/perfil/perfil_page.dart';
 import '../presentation/pages/cupones/cupones_page.dart';
 // import '../presentation/pages/profile_page.dart';
+import '../presentation/pages/donaciones/donaciones_page.dart';
 import '../presentation/pages/add_page.dart';
 import '../presentation/pages/search_page.dart';
-import '../presentation/pages/chat_page.dart';
+// import '../presentation/pages/chat_page.dart';
 import '../presentation/pages/screens/home_screen.dart';
 import '../presentation/chat/chat_screen.dart';
 import 'page_transitions.dart';
@@ -56,7 +57,7 @@ final appRouter = GoRouter(
           pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
             context,
             state,
-            const ChatPage(),
+            const DonacionesPage(),
           ),
         ),
         GoRoute(
