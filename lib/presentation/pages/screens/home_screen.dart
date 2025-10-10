@@ -15,7 +15,8 @@ class HomeScreen extends StatelessWidget {
     final String currentLocation = GoRouterState.of(context).uri.toString();
 
     // Determinar si mostrar el AppBar
-    final bool showAppBar = currentLocation != '/perfil';
+    final bool showAppBar =
+        currentLocation != '/perfil' && currentLocation != '/cupon';
 
     // Scaffold: Estructura básica de una pantalla en Material Design
     return Scaffold(
