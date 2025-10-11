@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../widgets/curved_bottom_nav.dart';
+import '../principal/widgets/user_header.dart';
 
 // HomeScreen es StatelessWidget ahora que la lógica está en CurvedBottomNav
 class HomeScreen extends StatelessWidget {
@@ -29,10 +30,30 @@ class HomeScreen extends StatelessWidget {
       ), // Color de fondo de toda la pantalla
       // AppBar: Barra superior de la aplicación (condicionalmente mostrada)
       appBar: showAppBar
-          ? AppBar(
-              title: const Text('Curved Navigation Bar'),
-              backgroundColor: Colors.blue[300], // Color de fondo más claro
-              foregroundColor: Colors.white, // Color del texto
+          ? PreferredSize(
+              preferredSize: const Size.fromHeight(300),
+              child: Container(
+                color: Colors.grey[100],
+                child: SafeArea(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        UserHeader(
+                          userName: 'Maria Torrez',
+                          userImage:
+                              'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/350218472/original/1cae06a7845aee5beafbf7fe6a623dc5caafbed9/draw-cute-minimalist-cartoon-avatar-or-icon-for-you.jpg',
+                          onNotificationPressed: () {
+                            // Manejar notificaciones
+                          },
+                          onUserImagePressed: () {
+                            context.go('/perfil');
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             )
           : null,
 
