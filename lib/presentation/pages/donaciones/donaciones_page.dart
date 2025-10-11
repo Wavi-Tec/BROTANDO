@@ -18,44 +18,7 @@ class _DonacionesPageState extends State<DonacionesPage> {
       body: SafeArea(
         child: Column(
           children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24.0,
-                vertical: 10.0,
-              ),
-              child: Row(
-                children: [
-                  // Align "Donación" with the left button
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: const Text(
-                        'Donación',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Align "Monedas" with the right button
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: const Text(
-                        'Monedas',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
+            const SizedBox(height: 20), //es para dar espacio arriba
             // Stats Row
             const StatsCard(donationsCount: 16, coinsCount: 500),
 
@@ -82,34 +45,46 @@ class _DonacionesPageState extends State<DonacionesPage> {
                     title:
                         '"Salvemos la Chiquitanía" - Bomberos Forestales Voluntarios',
                     description:
-                        'Descripción: Campaña ciudadana que recauda fondos para equipar a los bomberos forestales que luchan contra los incendios en la Chiquitanía y a los refugios de animales, plantas y animales durante los incendios.',
+                        'Campaña ciudadana que recauda fondos para equipar a los bomberos forestales que luchan contra los incendios en la Chiquitanía y a los refugios de animales.',
                     imageUrl:
                         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kQM4nZP5q5ZJ321XBevY6c3zYJkjo4.png',
                     category: 'Bomberos',
+                    donationCount: 127,
+                    targetAmount: 50000,
+                    currentAmount: 35000,
                   ),
                   DonationCard(
                     title: 'Sembramos VIDA en la Chiquitanía - Unión Verde',
                     description:
-                        'Descripción: Programa impulsado por la Unión Europea bajo los Objetivos de Desarrollo Sostenible (ODS) que busca la restauración y adaptación al cambio climático mediante la siembra de especies nativas y endémicas.',
+                        'Programa impulsado por la Unión Europea bajo los Objetivos de Desarrollo Sostenible (ODS) que busca la restauración y adaptación al cambio climático.',
                     imageUrl:
                         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kQM4nZP5q5ZJ321XBevY6c3zYJkjo4.png',
                     category: 'Reforestar',
+                    donationCount: 89,
+                    targetAmount: 25000,
+                    currentAmount: 18500,
                   ),
                   DonationCard(
                     title: 'Fundación Amigos de la Naturaleza (FAN Bolivia)',
                     description:
-                        'Descripción: Organización dedicada a la conservación de la biodiversidad boliviana, que apoya a áreas protegidas y comunidades locales en la protección de bosques, ríos y fuentes de agua.',
+                        'Organización dedicada a la conservación de la biodiversidad boliviana, que apoya a áreas protegidas y comunidades locales en la protección de bosques.',
                     imageUrl:
                         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kQM4nZP5q5ZJ321XBevY6c3zYJkjo4.png',
                     category: 'Guardaparque',
+                    donationCount: 203,
+                    targetAmount: 75000,
+                    currentAmount: 45000,
                   ),
                   DonationCard(
                     title: 'Fundación Munasim Kullakita',
                     description:
-                        'Descripción: Organización que trabaja por los derechos de los animales.',
+                        'Organización que trabaja por los derechos de los animales.',
                     imageUrl:
                         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kQM4nZP5q5ZJ321XBevY6c3zYJkjo4.png',
-                    category: 'Todos',
+                    category: 'Incendios',
+                    donationCount: 56,
+                    targetAmount: 15000,
+                    currentAmount: 8900,
                   ),
                 ],
               ),
