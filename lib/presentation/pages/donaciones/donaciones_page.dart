@@ -18,44 +18,7 @@ class _DonacionesPageState extends State<DonacionesPage> {
       body: SafeArea(
         child: Column(
           children: [
-            // Header
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24.0,
-                vertical: 10.0,
-              ),
-              child: Row(
-                children: [
-                  // Align "Donación" with the left button
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: const Text(
-                        'Donación',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Align "Monedas" with the right button
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: const Text(
-                        'Monedas',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
+            const SizedBox(height: 20), //es para dar espacio arriba
             // Stats Row
             const StatsCard(donationsCount: 16, coinsCount: 500),
 
@@ -118,7 +81,7 @@ class _DonacionesPageState extends State<DonacionesPage> {
                         'Organización que trabaja por los derechos de los animales.',
                     imageUrl:
                         'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kQM4nZP5q5ZJ321XBevY6c3zYJkjo4.png',
-                    category: 'Animales',
+                    category: 'Incendios',
                     donationCount: 56,
                     targetAmount: 15000,
                     currentAmount: 8900,
