@@ -10,6 +10,7 @@ import '../presentation/pages/search_page.dart';
 // import '../presentation/pages/chat_page.dart';
 import '../presentation/pages/screens/home_screen.dart';
 import '../presentation/chat/chat_screen.dart';
+import '../presentation/pages/transacciones/transacciones_page.dart';
 import 'page_transitions.dart';
 
 final appRouter = GoRouter(
@@ -60,6 +61,17 @@ final appRouter = GoRouter(
             const DonacionesPage(),
           ),
         ),
+
+        // ✅ NUEVA RUTA DE TRANSACCIONES GUADALUPE
+        GoRoute(
+          path: '/transacciones',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const TransaccionesPage(),
+          ),
+        ),
+
         GoRoute(
           path: '/chat-screen',
           pageBuilder: (context, state) => PageTransitions.buildFadeTransition(

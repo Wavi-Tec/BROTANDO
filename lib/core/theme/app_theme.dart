@@ -4,6 +4,7 @@ import './text_style.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    
     scaffoldBackgroundColor: const Color(0xFFF7F6F2),
     primaryColor: AppColors.greenPrimary,
     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.greenPrimary),
