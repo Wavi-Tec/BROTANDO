@@ -5,6 +5,7 @@ import '../presentation/pages/perfil/perfil_page.dart';
 import '../presentation/pages/cupones/cupones_page.dart';
 // import '../presentation/pages/profile_page.dart';
 import '../presentation/pages/donaciones/donaciones_page.dart';
+import '../presentation/pages/plantas/plantas_page.dart';
 import '../presentation/pages/add_page.dart';
 import '../presentation/pages/search_page.dart';
 // import '../presentation/pages/chat_page.dart';
@@ -69,6 +70,15 @@ final appRouter = GoRouter(
             context,
             state,
             const TransaccionesPage(),
+          ),
+        ),
+
+        GoRoute(
+          path: '/plantas',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const PlantasPage(),
           ),
         ),
 
