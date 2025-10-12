@@ -13,6 +13,11 @@ import '../presentation/chat/chat_screen.dart';
 import '../presentation/pages/transacciones/transacciones_page.dart';
 import 'page_transitions.dart';
 
+import '../presentation/pages/quiz/categories_page.dart';
+import '../presentation/pages/quiz/quiz_page.dart';
+import '../presentation/pages/quiz/results_page.dart';
+import '../core/models/category_model.dart';
+
 final appRouter = GoRouter(
   initialLocation: '/inicio',
   routes: [
@@ -71,7 +76,46 @@ final appRouter = GoRouter(
             const TransaccionesPage(),
           ),
         ),
+        // 🎯 NUEVA RUTA DE QUIZZ GUADALUPE
+        GoRoute(
+          path: '/quiz',
+          pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+            context,
+            state,
+            const CategoriesPage(),
+          ),
+          // 👇 SUB-RUTAS PARA QUIZ Y RESULTADOS
+          routes: [
+            GoRoute(
+              path: 'play',
+              pageBuilder: (context, state) {
+                final category = state.extra as QuizCategory;
+                return PageTransitions.buildFadeTransition(
+                  context,
+                  state,
+                  QuizPage(category: category),
+                );
+              },
+            ),
+            GoRoute(
+              path: 'results',
+              pageBuilder: (context, state) {
+                final params = state.extra as Map<String, dynamic>;
+                return PageTransitions.buildFadeTransition(
+                  context,
+                  state,
+                  ResultsPage(
+                    category: params['category'] as QuizCategory,
+                    correctAnswers: params['correctAnswers'] as int,
+                    totalQuestions: params['totalQuestions'] as int,
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
 
+        ///////////////////////////
         GoRoute(
           path: '/chat-screen',
           pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
