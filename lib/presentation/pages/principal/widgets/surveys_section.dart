@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SurveysSection extends StatelessWidget {
   const SurveysSection({super.key});
@@ -17,17 +18,18 @@ class SurveysSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        _buildPreguntadosCard(),
+        _buildPreguntadosCard(context),
         const SizedBox(height: 12),
         _buildDonationCard(),
       ],
     );
   }
 
-  Widget _buildPreguntadosCard() {
+  Widget _buildPreguntadosCard(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Manejar tap de Preguntados
+        // Navegar a la página de quiz
+        context.go('/quiz');
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
