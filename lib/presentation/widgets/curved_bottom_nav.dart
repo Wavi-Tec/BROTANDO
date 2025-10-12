@@ -15,7 +15,7 @@ class _CurvedBottomNavState extends State<CurvedBottomNav> {
     {'icon': Icons.home, 'route': '/inicio'},
     {'icon': Icons.confirmation_num, 'route': '/cupon'},
     {'icon': Icons.compost, 'route': '/bosque'},
-    {'icon': Icons.assignment_turned_in, 'route': '/cuestionario'},
+    {'icon': Icons.assignment_turned_in, 'route': '/quiz'},
     {'icon': Icons.volunteer_activism, 'route': '/donacion'},
   ];
 
