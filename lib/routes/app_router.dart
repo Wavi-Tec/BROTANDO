@@ -6,6 +6,7 @@ import '../presentation/pages/perfil/perfil_page.dart';
 import '../presentation/pages/cupones/cupones_page.dart';
 // import '../presentation/pages/profile_page.dart';
 import '../presentation/pages/donaciones/donaciones_page.dart';
+import '../presentation/login/login_page.dart';
 import '../presentation/pages/plantas/plantas_page.dart';
 // import '../presentation/pages/add_page.dart';
 // import '../presentation/pages/bosque/bosque_page.dart';
@@ -150,6 +151,14 @@ final appRouter = GoRouter(
       path: '/',
       pageBuilder: (context, state) =>
           PageTransitions.buildFadeTransition(context, state, const HomePage()),
+    ),
+    GoRoute(
+      path: '/login',
+      pageBuilder: (context, state) => PageTransitions.buildFadeTransition(
+        context,
+        state,
+        const LoginPage(),
+      ),
     ),
   ],
 );
