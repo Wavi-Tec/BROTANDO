@@ -17,7 +17,9 @@ class HomeScreen extends StatelessWidget {
 
     // Determinar si mostrar el AppBar
     final bool showAppBar =
-        currentLocation != '/perfil' && currentLocation != '/cupon';
+        currentLocation != '/perfil' &&
+        currentLocation != '/cupon' &&
+        currentLocation != '/bosque';
 
     // Scaffold: Estructura básica de una pantalla en Material Design
     return Scaffold(
@@ -33,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           ? PreferredSize(
               preferredSize: const Size.fromHeight(300),
               child: Container(
-                color: Colors.grey[100],
+                color: Colors.white,
                 child: SafeArea(
                   child: SingleChildScrollView(
                     child: Column(

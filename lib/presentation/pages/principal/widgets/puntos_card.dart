@@ -10,7 +10,7 @@ class PuntosCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
-      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -28,7 +28,7 @@ class PuntosCard extends StatelessWidget {
             width: 50,
             height: 50,
             decoration: BoxDecoration(
-              color: const Color(0xFF00897B),
+              color: const Color(0xFF10B3A9),
               shape: BoxShape.circle,
             ),
             child: Stack(
@@ -41,7 +41,7 @@ class PuntosCard extends StatelessWidget {
                     width: 16,
                     height: 16,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF4CAF50),
+                      color: const Color.fromARGB(255, 14, 150, 19),
                       borderRadius: BorderRadius.circular(3),
                     ),
                     child: const Icon(Icons.eco, color: Colors.white, size: 12),
