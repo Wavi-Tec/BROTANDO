@@ -8,7 +8,12 @@ class TransaccionesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Verde agua claro
+      backgroundColor: const Color.fromARGB(
+        255,
+        255,
+        255,
+        255,
+      ), // Verde agua claro
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,14 +24,17 @@ class TransaccionesPage extends StatelessWidget {
             const SizedBox(height: 16),
 
             // Título
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                'Yasta te Premia',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900, // 🔥 más gruesa que bold
-                  color: Color(0xFF2C3E50),
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  'Yasta te Premia',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900, // 🔥 más gruesa que bold
+                    color: Color(0xFF2C3E50),
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
