@@ -4,7 +4,7 @@ class RewardCard extends StatelessWidget {
   final String points;
   final String number;
   final bool isUnlocked;
-  final bool isSpecial; // Para la tarjeta del árbol
+  final bool isSpecial;
 
   const RewardCard({
     super.key,
@@ -17,71 +17,97 @@ class RewardCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 90, // altura compacta
       decoration: BoxDecoration(
-        color: isSpecial 
-            ? const Color(0xFF4CAF50) // Verde para árbol
-            : const Color(0xFF37474F), // Gris oscuro
-        borderRadius: BorderRadius.circular(12),
+        color: isSpecial
+            ? const Color.fromARGB(255, 70, 122, 71)
+            : const Color(0xFF37474F),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Stack(
         children: [
-          // Contenido principal
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Puntos
-                if (!isSpecial)
-                  Text(
+          // 🌟 Contenido principal centrado
+          Center(
+            child: isSpecial
+                ? Image.asset(
+                    'assets/imagesG/arbol1.png',
+                    height: 100, // 🔹 ajusta el tamaño según necesites
+                    fit: BoxFit.contain,
+                  )
+                : Text(
                     points,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w800,
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                
-                const Spacer(),
-                
-                // Ícono o imagen especial
-                if (isSpecial)
-                  Center(
-                    child: Text(
-                      '🌳',
-                      style: const TextStyle(fontSize: 40),
-                    ),
-                  )
-                else
-                  const Icon(
-                    Icons.shopping_bag,
-                    color: Color(0xFF00BFA5),
-                    size: 24,
-                  ),
-                
-                const Spacer(),
-                
-                // Número inferior
-                Row(
-                  children: [
-                    Text(
-                      number,
-                      style: TextStyle(
-                        color: isUnlocked ? Colors.white : Colors.white70,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(width: 4),
-                    if (isUnlocked)
-                      const Icon(
-                        Icons.check_circle,
-                        color: Color(0xFF00BFA5),
-                        size: 16,
-                      ),
+          ),
+
+          // 🌈 Degradado inferior horizontal
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 36,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(10),
+                ),
+                gradient: const LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
+                    Color(0xFF00BFA5), // Turquesa brillante
+                    Color(0xFF37474F), // Gris oscuro
+                    Color(0xFF26A69A), // Verde medio
                   ],
                 ),
-              ],
+              ),
+              // 🔹 Ícono centrado en el degradado (eje X y eje Y)
+              child: const Center(
+                child: Icon(
+                  Icons.compare_arrows,
+                  color: Colors.white,
+                  size: 20,
+                ),
+              ),
+            ),
+          ),
+
+          // 🔢 Número e ícono derecho (texto)
+          Positioned(
+            bottom: 0,
+            left: 10,
+            right: 10,
+            height: 36, // igual al alto del degradado
+            child: Align(
+              alignment:
+                  Alignment.center, // 🔹 centra todo dentro del degradado
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // 🔹 Número
+                  Text(
+                    number,
+                    style: TextStyle(
+                      color: isUnlocked ? Colors.white : Colors.white70,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  // 🔹 Imagen (logo Yasta)
+                  Image.asset(
+                    'assets/imagesG/yasta.png',
+                    height:
+                        36, // 🔹 ajustado para quedar centrado en el degradado
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
             ),
           ),
         ],

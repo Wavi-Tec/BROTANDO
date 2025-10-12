@@ -31,12 +31,7 @@ class MonthHeader extends StatelessWidget {
             style: const TextStyle(
               fontSize: 28, // ← CAMBIA EL TAMAÑO AQUÍ
               fontWeight: FontWeight.bold,
-              color: Color.fromARGB(
-                255,
-                0,
-                0,
-                0,
-              ), // ← CAMBIA EL COLOR AQUÍ (verde agua)
+              color: Color.fromARGB(255, 0, 0, 0), // ← CAMBIA EL COLOR AQUÍ (verde agua)
             ),
           ),
 
@@ -57,12 +52,7 @@ class MonthHeader extends StatelessWidget {
             style: TextStyle(
               fontSize: 18, // ← CAMBIA EL TAMAÑO AQUÍ
               fontWeight: FontWeight.w600,
-              color: Color.fromARGB(
-                255,
-                122,
-                122,
-                122,
-              ), // ← CAMBIA EL COLOR AQUÍ (gris oscuro)
+              color: Color.fromARGB(255, 122, 122, 122), // ← CAMBIA EL COLOR AQUÍ (gris oscuro)
             ),
           ),
         ],
