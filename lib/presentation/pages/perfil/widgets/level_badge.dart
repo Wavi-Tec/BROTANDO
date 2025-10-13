@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-class AchievementBadge extends StatelessWidget {
+class LevelBadge extends StatelessWidget {
   final String image;
   final String title;
+  final Color backgroundColor;
   final bool isUnlocked;
   final String? lockMessage; // ← NUEVO: mensaje de bloqueo
   final VoidCallback? onTap;
 
-  const AchievementBadge({
+  const LevelBadge({
     super.key,
     required this.image,
     required this.title,
+    required this.backgroundColor,
     this.isUnlocked = false,
     this.lockMessage,
     this.onTap,
@@ -21,16 +23,18 @@ class AchievementBadge extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 110, // ← Ancho fijo para el carrusel
+        width: 120, // ← Ancho fijo para el carrusel
         margin: const EdgeInsets.only(right: 15),
         child: Column(
           children: [
             Stack(
               children: [
                 Container(
-                  width: 90,
-                  height: 90,
+                  width: 100,
+                  height: 100,
                   decoration: BoxDecoration(
+                    color: backgroundColor,
+                    borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.1),
@@ -39,11 +43,15 @@ class AchievementBadge extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Opacity(
-                    opacity: isUnlocked ? 1.0 : 0.4,
-                    child: Image.asset(
-                      image,
-                      fit: BoxFit.contain,
+                  child: Center(
+                    child: Opacity(
+                      opacity: isUnlocked ? 1.0 : 0.4,
+                      child: Image.asset(
+                        image,
+                        width: 110,
+                        height: 110,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
@@ -53,7 +61,7 @@ class AchievementBadge extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.3),
-                        shape: BoxShape.circle,
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: const Icon(
                         Icons.lock,
@@ -84,7 +92,7 @@ class AchievementBadge extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  color: Colors.green.shade100,
+                  color: Colors.orange.shade100,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -93,7 +101,7 @@ class AchievementBadge extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Flexo',
                     fontSize: 9,
-                    color: Colors.green.shade900,
+                    color: Colors.orange.shade900,
                     fontWeight: FontWeight.w500,
                   ),
                   maxLines: 2,

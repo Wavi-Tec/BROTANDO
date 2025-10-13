@@ -9,48 +9,56 @@ class InviteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF009688), // tono verde más moderno
-          foregroundColor: Colors.white,
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          elevation: 2,
-          shadowColor: Colors.black.withOpacity(0.15),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.group_add_rounded, size: 20, color: Colors.white),
-            const SizedBox(width: 8),
-            const Text(
-              'Invita a un amigo',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 0.2,
-              ),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xFF004D40), // Verde muy oscuro
+                Color(0xFF00796B), // Verde medio
+                Color(0xFF26A69A), // Verde claro
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
             ),
-            const SizedBox(width: 10),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-              decoration: BoxDecoration(
-                color: const Color(0xFFFFEB3B),
-                borderRadius: BorderRadius.circular(6),
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                blurRadius: 8,
+                offset: const Offset(0, 3),
               ),
-              child: const Text(
-                'Yasta',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
-                  color: Color(0xFF00695C),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Texto a la izquierda
+              const Expanded(
+                child: Text(
+                  'Invita a un amigo',
+                  style: TextStyle(
+                    fontFamily: 'Flexo',
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900, // ExtraBold
+                    color: Color(0xFFFDD835), // Amarillo vibrante
+                    letterSpacing: 0.3,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-            ),
-          ],
+              // Logo a la derecha
+              Image.asset(
+                'assets/logoYasta.png',
+                height: 45, // Ajusta el tamaño según necesites
+                width: 45,
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
         ),
       ),
     );

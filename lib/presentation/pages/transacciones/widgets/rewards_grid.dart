@@ -15,9 +15,9 @@ class RewardsGrid extends StatelessWidget {
       childAspectRatio: 0.85,
       children: const [
         // Fila 1
-        RewardCard(points: '10 Puntos', number: '20', isUnlocked: true),
-        RewardCard(points: '15 Puntos', number: '40', isUnlocked: true),
-        RewardCard(points: '20 Puntos', number: '50', isUnlocked: true),
+        // RewardCard(points: '10 Puntos', number: '20', isUnlocked: true),
+        // RewardCard(points: '15 Puntos', number: '40', isUnlocked: true),
+        // RewardCard(points: '20 Puntos', number: '50', isUnlocked: true),
 
         // Fila 2
         RewardCard(points: '25 Puntos', number: '70', isUnlocked: true),

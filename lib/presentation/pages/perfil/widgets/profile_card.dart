@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfileCard extends StatelessWidget {
   final String userName;
@@ -40,8 +41,8 @@ class ProfileCard extends StatelessWidget {
           Stack(
             children: [
               Container(
-                width: 60,
-                height: 60,
+                width: 150,
+                height: 150,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: const LinearGradient(
@@ -82,8 +83,8 @@ class ProfileCard extends StatelessWidget {
                   child: IconButton(
                     icon: const Icon(
                       Icons.edit,
-                      size: 12,
-                      color: Color(0xFF1DD1A1),
+                      size: 25,
+                      color: Color.fromARGB(255, 36, 36, 36),
                     ),
                     onPressed: onEditPressed,
                     padding: EdgeInsets.zero,
@@ -114,13 +115,14 @@ class ProfileCard extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               // 🌿 Plants Card mejorado
+              // 🌿 Plants Card mejorado
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFDCF7E3), // Verde suave más moderno
+                  color: const Color(0xFFDCF7E3),
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
@@ -131,33 +133,60 @@ class ProfileCard extends StatelessWidget {
                   ],
                 ),
                 child: Row(
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.max, // ← Cambiar de min a max
+                  mainAxisAlignment:
+                      MainAxisAlignment.center, // ← Centrar contenido
                   children: [
                     // Icono o emoji principal
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(6),
                       decoration: const BoxDecoration(
-                        color: Color(0xFFB2E8C5), // Fondo sutil para el ícono
+                        color: Color(0xFFB2E8C5),
                         shape: BoxShape.circle,
                       ),
-                      child: const Text('🌱', style: TextStyle(fontSize: 22)),
+                      child: ClipOval(
+                        // ← Para que la imagen sea circular
+                        child: Image.asset(
+                          'assets/imagesG/p1.png', // ← Ruta relativa desde la raíz del proyecto
+                          width: 40, // ← Ajusta el tamaño
+                          height: 40,
+                          fit: BoxFit.cover, // ← Para que cubra todo el espacio
+                        ),
+                      ),
                     ),
                     const SizedBox(width: 10),
                     // Textos
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          '$plantsCount Plantas',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF1B5E20),
+                        RichText(
+                          text: TextSpan(
+                            style: const TextStyle(
+                              fontFamily: 'Flexo',
+                              color: Color.fromARGB(255, 12, 54, 15),
+                              fontWeight: FontWeight.bold,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: '$plantsCount', // 👈 solo el número
+                                style: const TextStyle(
+                                  fontSize:
+                                      25, // 👈 tamaño más grande SOLO del número
+                                ),
+                              ),
+                              const TextSpan(
+                                text:
+                                    ' Plantas', // 👈 mantiene la palabra normal
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
                           ),
                         ),
+
                         Text(
                           plantsStatus,
                           style: const TextStyle(
+                            fontFamily: 'Flexo',
                             fontSize: 12,
                             color: Colors.black54,
                           ),
